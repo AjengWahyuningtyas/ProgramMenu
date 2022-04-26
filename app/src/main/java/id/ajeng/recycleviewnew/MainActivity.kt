@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvMakanan: RecyclerView
@@ -17,7 +20,22 @@ class MainActivity : AppCompatActivity() {
         rvMakanan.setHasFixedSize(true)
 
         list.addAll(MakananData.listData)
-        showRecyclerView()
+        val firstFragment=FirstFragment()
+        val secondFragment=SecondFragment()
+        val thirdFragment=ThirdFragment()
+
+        setCurrentFragment(firstFragment)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                // R.id.home->setCurrentFragment(firstFragment)
+                R.id.home->showRecyclerView();
+                R.id.person->setCurrentFragment(secondFragment)
+                R.id.settings->setCurrentFragment(thirdFragment)
+            }
+            true
+        }
+        // showRecyclerView()
     }
 
     private fun showRecyclerView() {
@@ -25,4 +43,10 @@ class MainActivity : AppCompatActivity() {
         val lisMakananAdapter = MakananAdapter.MakananAdapter(list)
         rvMakanan.adapter = lisMakananAdapter
     }
+
+    private fun setCurrentFragment(fragment:Fragment)=
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.flFragment,fragment)
+            commit()
+        }
 }
