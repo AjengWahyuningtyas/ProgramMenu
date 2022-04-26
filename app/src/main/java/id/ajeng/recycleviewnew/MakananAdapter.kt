@@ -43,8 +43,5 @@ class MakananAdapter {
                 Toast.makeText(holder.itemView.context, "Kamu memilih" +listMakanan[holder.adapterPosition].name, Toast.LENGTH_SHORT)
             }
         }
-
-
     }
-
 }

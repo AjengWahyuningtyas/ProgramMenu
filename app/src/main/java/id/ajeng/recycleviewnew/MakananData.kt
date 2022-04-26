@@ -24,7 +24,6 @@ object MakananData {
         "Various vegetables in peanut sauce topped with krupuk",
         "Flour, hot water, baking powder, bicarbonate soda, sugar, eggs, peanut, margarine, butter",
         "Tempe"
-
     )
 
     private val makananPhoto = intArrayOf(
