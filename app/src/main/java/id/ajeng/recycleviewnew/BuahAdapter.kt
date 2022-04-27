@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class MakananAdapter {
-    class MakananAdapter(private val listMakanan: ArrayList<Makanan>) : RecyclerView.Adapter<MakananAdapter.CardViewHolder>() {
+class BuahAdapter {
+    class BuahAdapter(private val listBuah: ArrayList<Buah>) : RecyclerView.Adapter<BuahAdapter.CardViewHolder>() {
         inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
             var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-            var tvDeskripsi: TextView = itemView.findViewById(R.id.tv_item_deskripsi)
+            var tvHarga: TextView = itemView.findViewById(R.id.tv_item_harga)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
@@ -24,11 +24,11 @@ class MakananAdapter {
         }
 
         override fun getItemCount(): Int {
-            return listMakanan.size
+            return listBuah.size
         }
 
         override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-            val makanan =listMakanan[position]
+            val makanan =listBuah[position]
 
             
             Glide.with(holder.itemView.context)
@@ -37,10 +37,10 @@ class MakananAdapter {
                 .into(holder.imgPhoto)
 
             holder.tvName.text = makanan.name
-            holder.tvDeskripsi.text = makanan.deskripsi
+            holder.tvHarga.text = makanan.harga
 
             holder.itemView.setOnClickListener{
-                Toast.makeText(holder.itemView.context, "Kamu memilih" +listMakanan[holder.adapterPosition].name, Toast.LENGTH_SHORT)
+                Toast.makeText(holder.itemView.context, "Kamu memilih" +listBuah[holder.adapterPosition].name, Toast.LENGTH_SHORT)
             }
         }
     }
