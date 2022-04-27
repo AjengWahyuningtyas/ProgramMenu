@@ -3,23 +3,24 @@ package id.ajeng.recycleviewnew
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvMakanan: RecyclerView
-    private val list = ArrayList<Makanan>()
+    private lateinit var rvBuah: RecyclerView
+    private val list = ArrayList<Buah>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rvMakanan = findViewById(R.id.rv_makanan)
-        rvMakanan.setHasFixedSize(true)
+        rvBuah = findViewById(R.id.rv_makanan)
+        rvBuah.setHasFixedSize(true)
 
-        list.addAll(MakananData.listData)
+        list.addAll(BuahData.listData)
         val firstFragment=FirstFragment()
         val secondFragment=SecondFragment()
         val thirdFragment=ThirdFragment()
@@ -39,9 +40,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerView() {
-        rvMakanan.layoutManager= LinearLayoutManager( this)
-        val lisMakananAdapter = MakananAdapter.MakananAdapter(list)
-        rvMakanan.adapter = lisMakananAdapter
+        rvBuah.layoutManager= GridLayoutManager( this, 2)
+        val lisBuahAdapter = BuahAdapter.BuahAdapter(list)
+        rvBuah.adapter = lisBuahAdapter
     }
 
     private fun setCurrentFragment(fragment:Fragment)=

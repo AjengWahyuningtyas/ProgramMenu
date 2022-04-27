@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8FBC8F"
+    android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
     <FrameLayout
@@ -33,4 +33,5 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/item_card_makanan"
         android:id="@+id/rv_makanan"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
