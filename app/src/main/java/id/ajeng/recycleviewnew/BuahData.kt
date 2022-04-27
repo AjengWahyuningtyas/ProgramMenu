@@ -1,6 +1,6 @@
 package id.ajeng.recycleviewnew
 
-object MakananData {
+object BuahData {
 
     private val buahNames = arrayOf(
         "Nanas Palembang",
@@ -20,16 +20,15 @@ object MakananData {
         "gr"
     )
 
-    private val buahDeskripsi = arrayOf(
-        "Meat (beef, lamb or goat), coconut milk, chilli, ginger, galangal, turmeric, lemongrass, garlic, shallot",
-        "Ground beef, tapioca, noodle, rice vermicelli, beef broth, kailan, celery, salted vegetables, fried shallots",
-        "Skewered and grilled meats with various sauces, mainly peanut sauce",
-        "A miniature banquet of meats, fish, vegetables, and spicy sambals eaten with plain white rice",
-        "Fried rice with pieces of meat and/or vegetables, and an assortment of seasonings such as sweet soy sauce",
-        "Meat, keluak nut",
-        "Various vegetables in peanut sauce topped with krupuk",
-        "Flour, hot water, baking powder, bicarbonate soda, sugar, eggs, peanut, margarine, butter",
-        "Tempe"
+    private val buahHarga = arrayOf(
+        "Rp 10.500/" + satuan[0],
+        "Rp 24.900/" + satuan[1],
+        "Rp 28.900/800-1000" + satuan[3],
+        "Rp 18.500/" + satuan[2],
+        "Rp 38.900/1800-2300" + satuan[3],
+        "Rp 42.500/4000-5000" + satuan[3],
+        "Rp 23.900/" + satuan[2],
+        "Rp 25.900/" + satuan[2],
     )
 
     private val buahPhoto = intArrayOf(
@@ -43,13 +42,14 @@ object MakananData {
         R.drawable.guava
     )
 
-    val listData: ArrayList<Makanan>
+    val listData: ArrayList<Buah>
     get() {
-        var list = arrayListOf<Makanan>()
+        var list = arrayListOf<Buah>()
             for (position in buahNames.indices){
-                val buah = Makanan()
+                val buah = Buah()
                 buah.name = buahNames[position]
-                buah.deskripsi = buahDeskripsi[position]
+                //buah.deskripsi = buahDeskripsi[position]
+                buah.harga = buahHarga[position]
                 buah.photo = buahPhoto[position]
                 list.add(buah)
             }
