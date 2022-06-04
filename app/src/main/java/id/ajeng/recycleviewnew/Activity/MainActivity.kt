@@ -2,10 +2,11 @@ package id.ajeng.recycleviewnew
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.fragment.app.Fragment
+import id.ajeng.recycleviewnew.Adapter.BuahAdapter
+import id.ajeng.recycleviewnew.Model.Buah
 import kotlinx.android.synthetic.main.activity_main.*
 
 

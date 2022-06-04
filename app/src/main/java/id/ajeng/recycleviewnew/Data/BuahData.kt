@@ -1,5 +1,7 @@
 package id.ajeng.recycleviewnew
 
+import id.ajeng.recycleviewnew.Model.Buah
+
 object BuahData {
 
     private val buahNames = arrayOf(

@@ -1,4 +1,4 @@
-package id.ajeng.recycleviewnew
+package id.ajeng.recycleviewnew.Adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import id.ajeng.recycleviewnew.Model.Buah
+import id.ajeng.recycleviewnew.R
 
 class BuahAdapter {
     class BuahAdapter(private val listBuah: ArrayList<Buah>) : RecyclerView.Adapter<BuahAdapter.CardViewHolder>() {
