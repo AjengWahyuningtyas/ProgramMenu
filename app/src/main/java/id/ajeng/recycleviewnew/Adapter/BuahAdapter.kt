@@ -5,45 +5,40 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import id.ajeng.recycleviewnew.Data.BuahData
 import id.ajeng.recycleviewnew.Model.Buah
+import id.ajeng.recycleviewnew.Model.BuahViewsModel
 import id.ajeng.recycleviewnew.R
 
-class BuahAdapter {
-    class BuahAdapter(private val listBuah: ArrayList<Buah>) : RecyclerView.Adapter<BuahAdapter.CardViewHolder>() {
-        inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
-            var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-            var tvHarga: TextView = itemView.findViewById(R.id.tv_item_harga)
+class BuahAdapter  : RecyclerView.Adapter<BuahAdapter.ViewHolder>() {
+
+    private val listBuah = arrayOf("Pisang", "Apel", "Jambu", "Naga")
+    private val listImageBuah = arrayOf(R.drawable.banana, R.drawable.apel, R.drawable.guava, R.drawable.dragonfruit)
+
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // val imageView: ImageView = itemView.findViewById(R.id.imageProductDetail)
+        // val textView: TextView = itemView.findViewById(R.id.productTitle)
+        var listBuah: TextView
+        var listImageBuah: ImageView
+
+        init {
+            listBuah = itemView.findViewById(R.id.namaBuah)
+            listImageBuah = itemView.findViewById(R.id.imageBuah)
         }
+    }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-            val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_card_makanan,parent, false)
-            return CardViewHolder(view)
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_card_makanan,parent, false)
+        return ViewHolder(view)
+    }
 
-        override fun getItemCount(): Int {
-            return listBuah.size
-        }
+    override fun getItemCount(): Int {
+        return listBuah.size
+    }
 
-        override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-            val makanan =listBuah[position]
-
-            
-            Glide.with(holder.itemView.context)
-                .load(makanan.photo)
-                .apply(RequestOptions())
-                .into(holder.imgPhoto)
-
-            holder.tvName.text = makanan.name
-            holder.tvHarga.text = makanan.harga
-
-            holder.itemView.setOnClickListener{
-                Toast.makeText(holder.itemView.context, "Kamu memilih" +listBuah[holder.adapterPosition].name, Toast.LENGTH_SHORT)
-            }
-        }
+    override fun onBindViewHolder(holder: BuahAdapter.ViewHolder, position: Int) {
+        holder.listBuah.text = listBuah[position]
+        holder.listImageBuah.setImageResource(listImageBuah[position])
     }
 }
