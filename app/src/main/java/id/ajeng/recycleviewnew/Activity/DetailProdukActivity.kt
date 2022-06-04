@@ -19,9 +19,9 @@ class DetailProdukActivity : AppCompatActivity() {
         val productImage : ImageView = findViewById(R.id.imageProductDetail)
 
         val bundle : Bundle?= intent.extras
-        val name = bundle!!.getString("Nama")
-        val price = bundle!!.getString("Price")
-        val imageId = bundle!!.getInt("imageId")
+        val name = bundle!!.getString("Produk")
+        val price = bundle!!.getString("Harga")
+        val imageId = bundle!!.getInt("Gambar")
 
         productName.text = name
         productPrice.text = price
