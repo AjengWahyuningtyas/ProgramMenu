@@ -1,4 +1,4 @@
-package id.ajeng.recycleviewnew
+package id.ajeng.recycleviewnew.Model
 
 class Buah (
     var name : String = "",
