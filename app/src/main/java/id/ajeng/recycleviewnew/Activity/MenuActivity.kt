@@ -1,7 +1,8 @@
-package id.ajeng.recycleviewnew
+package id.ajeng.recycleviewnew.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import id.ajeng.recycleviewnew.R
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
