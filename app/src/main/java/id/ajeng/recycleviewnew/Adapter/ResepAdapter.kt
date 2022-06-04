@@ -1,11 +1,15 @@
 package id.ajeng.recycleviewnew.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import id.ajeng.recycleviewnew.Activity.DetailProdukActivity
+import id.ajeng.recycleviewnew.Activity.DetailResepActivity
 import id.ajeng.recycleviewnew.R
 
 class ResepAdapter  : RecyclerView.Adapter<ResepAdapter.ViewHolder>() {
@@ -36,8 +40,17 @@ class ResepAdapter  : RecyclerView.Adapter<ResepAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.listResep.text = listResep[position]
         // holder.deskripsiResep.text = deskripsiResep[position]
         holder.imageResep.setImageResource(imageResep[position])
+
+        holder.imageResep.setOnClickListener{
+            val context = holder.imageResep.context
+            val intent = Intent( context, DetailResepActivity::class.java)
+
+            intent.putExtra("Resep", listResep!![position])
+            intent.putExtra("Gambar", imageResep!![position])
+
+            context.startActivity(intent)
+        }
     }
 }
