@@ -1,6 +1,7 @@
-package id.ajeng.recycleviewnew
+package id.ajeng.recycleviewnew.Data
 
 import id.ajeng.recycleviewnew.Model.Buah
+import id.ajeng.recycleviewnew.R
 
 object BuahData {
 
@@ -31,6 +32,28 @@ object BuahData {
         "Rp 42.500/4000-5000" + satuan[3],
         "Rp 23.900/" + satuan[2],
         "Rp 25.900/" + satuan[2],
+    )
+
+    private val deskripsi = arrayOf(
+        "Nanas Palembang",
+        "Apel Washington",
+        "Buah Naga",
+        "Lemon Lokal",
+        "Melon",
+        "Semangka",
+        "Pisang Cavendish",
+        "Jambu Crystal AB"
+    )
+
+    private val spesifikasiProduk  = arrayOf(
+        "Nanas Palembang",
+        "Apel Washington",
+        "Buah Naga",
+        "Lemon Lokal",
+        "Melon",
+        "Semangka",
+        "Pisang Cavendish",
+        "Jambu Crystal AB"
     )
 
     private val buahPhoto = intArrayOf(
