@@ -17,14 +17,17 @@ class DetailProdukActivity : AppCompatActivity() {
         val productName : TextView = findViewById(R.id.productTitle)
         val productPrice : TextView = findViewById(R.id.productPrice)
         val productImage : ImageView = findViewById(R.id.imageProductDetail)
+        val productDesc : TextView = findViewById(R.id.descriptionProductDetailContent)
 
         val bundle : Bundle?= intent.extras
         val name = bundle!!.getString("Produk")
         val price = bundle!!.getString("Harga")
         val imageId = bundle!!.getInt("Gambar")
+        val desc = bundle!!.getString("Detail")
 
         productName.text = name
         productPrice.text = price
+        productDesc.text = desc
         productImage.setImageResource(imageId)
     }
 }
