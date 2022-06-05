@@ -24,7 +24,10 @@ class LandingPageActivity : AppCompatActivity() {
         // we used the postDelayed(Runnable, time) method
         // to send a message with a delayed time.
         Handler().postDelayed({
+            // for production
             val intent = Intent(this, LoginActivity::class.java)
+            // for development
+            // val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, 3000) // 3000 is the delayed time in milliseconds.
