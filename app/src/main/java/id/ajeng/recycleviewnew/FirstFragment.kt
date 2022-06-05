@@ -1,10 +1,12 @@
 package id.ajeng.recycleviewnew
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class FirstFragment : Fragment(R.layout.fragment_first) {
     private val layoutManager: RecyclerView.LayoutManager? = null
-    private val adapter: RecyclerView.Adapter<BuahAdapter.ViewHolder>? = null
+    private val adapter: RecyclerView.Adapter<BuahAdapter.ProductViewHolder>? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,7 +34,12 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             adapter = BuahAdapter()
             addItemDecoration(DividerItemDecoration(activity, GridLayoutManager.HORIZONTAL))
         }
+
+        recyclerView.setOnClickListener {
+            view -> Log.d("btnSetup", "Selected")
+        }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
