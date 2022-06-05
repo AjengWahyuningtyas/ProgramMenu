@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     tools:context=".Activity.DetailResepActivity">
 
     <LinearLayout
@@ -17,12 +16,12 @@
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/imageDetailRecipe"
-                android:layout_width="300dp"
-                android:layout_gravity="center"
-                android:layout_height="300dp"
-                android:src="@drawable/ic_launcher_background"/>
+                <ImageView
+                    android:id="@+id/imageDetailRecipe"
+                    android:layout_width="300dp"
+                    android:layout_gravity="center"
+                    android:layout_height="300dp"
+                    android:src="@drawable/ic_launcher_background"/>
 
             <TextView
                 android:id="@+id/namaRecipe"
@@ -63,6 +62,33 @@
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/caraMemasakJudul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="10dp"
+                    android:textSize="21dp"
+                    android:text="Cara Memasak"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/caraMemasakLangkah"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Step Masak"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
