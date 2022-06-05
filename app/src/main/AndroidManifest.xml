@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleViewnew">
         <activity
-            android:name=".RecipeActivity"
+            android:name=".Activity.DetailResepActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailProdukActivity"
+            android:name=".Activity.RecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.DetailProdukActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.MenuActivity"
