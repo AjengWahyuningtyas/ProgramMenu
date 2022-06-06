@@ -14,17 +14,20 @@ class DetailResepActivity : AppCompatActivity() {
         val recipeName : TextView = findViewById(R.id.namaRecipe)
         val recipeDescription : TextView = findViewById(R.id.recipeDescription)
         val recipeDescriptionContent : TextView = findViewById(R.id.descriptionRecipeDetailContent)
+        val recipeStepContent : TextView = findViewById(R.id.caraMemasakLangkah)
         val recipeImage : ImageView = findViewById(R.id.imageDetailRecipe)
 
         val bundle : Bundle?= intent.extras
         val name = bundle!!.getString("Resep")
         val desc = bundle!!.getString("Deskripsi")
         val step = bundle!!.getString("Langkah")
+        val bahan = bundle!!.getString("Bahan")
         val imageId = bundle!!.getInt("Gambar")
 
         recipeName.text = name
         recipeDescription.text = desc
-        recipeDescriptionContent.text = step
+        recipeDescriptionContent.text = bahan
+        recipeStepContent.text = step
         recipeImage.setImageResource(imageId)
     }
 }
