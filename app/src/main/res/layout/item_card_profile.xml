@@ -17,9 +17,8 @@
 
         <ImageView
             android:id="@+id/imageProfile"
-            android:layout_width="4dp"
-            android:layout_height="4dp"
-            android:layout_margin="8dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:foregroundGravity="center"
