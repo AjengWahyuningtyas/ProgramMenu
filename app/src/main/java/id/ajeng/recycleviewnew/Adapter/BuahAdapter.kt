@@ -8,13 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import id.ajeng.recycleviewnew.Activity.DetailProdukActivity
-import id.ajeng.recycleviewnew.Model.Buah
 import id.ajeng.recycleviewnew.R
 
 class BuahAdapter  : RecyclerView.Adapter<BuahAdapter.ProductViewHolder>() {
 
-    private val listBuah = arrayOf("Buah Naga", "Buah Melon", "Buah Semangka", "Buah Apel")
-    private val listImageBuah = arrayOf(R.drawable.dragonfruit, R.drawable.melon, R.drawable.watermelon, R.drawable.apel)
+    private val listProduct = arrayOf("Buah Naga", "Buah Melon", "Buah Semangka", "Buah Apel", "Kacang Panjang", "Bayam", "Jagung Manis")
+    private val listImageProduct = arrayOf(R.drawable.dragonfruit, R.drawable.melon, R.drawable.watermelon, R.drawable.apel, R.drawable.kacangpanjang, R.drawable.bayam, R.drawable.jagung)
     private val satuan = arrayOf(
         "pack",
         "pcs",
@@ -27,6 +26,9 @@ class BuahAdapter  : RecyclerView.Adapter<BuahAdapter.ProductViewHolder>() {
         "Rp 24.900/" + satuan[1],
         "Rp 54.500" + satuan[3],
         "Rp 18.500/" + satuan[2],
+        "Rp 5.500/" + satuan[3],
+        "Rp 7.900/" + satuan[3],
+        "Rp 11.500/" + satuan[3],
     )
 
     private val desc = arrayOf(
@@ -52,7 +54,25 @@ class BuahAdapter  : RecyclerView.Adapter<BuahAdapter.ProductViewHolder>() {
 
         "Apel Washington memiliki ciri berkulit merah gelap dengan tekstur kulit agak tebal dan memiliki rasa manis. Manfaat apel ini dapat memberikan nutrisi pada kulit, mengurangi potensi penyakit alzheimer, mencegah gangguan hati dan pencernaan."
                 + "Sebaiknya disimpan di dalam suhu ruangan atau lemari pendingin agar dapat menjaga kesegaran dan lebih nikmat saat dimakan.\n"
-                + "Harga dapat berubah sewaktu-waktu"
+                + "Harga dapat berubah sewaktu-waktu",
+        "Kacang Panjang 250gr\n                                                                                                                                                                                                                                                 "
+                +"Kacang panjang/long bean merupakan tumbuhan yang dapat dijadikan menjadi sayur atau lalapan. Bagian yang dijadikan sayur atau lalapan adalah buah yang masih muda dan serat-seratnya masih lunak. Daunnya disebut dengan lembayung dan dapat dijadikan sayuran hijau.\n"
+                +"> Dikemas dalam keadaan terikat dalam kemasan yang sesuai berat produk \n                                                                                                                                                                                              "
+                +"                                                                                                                                                                                                                                                                       "
+                +"> Simpan dalam lemari pendingin maksimal 2-3 hari setelah diterima untuk menjaga kesegarannya \n                                                                                                                                                                       "
+                +"                                                                                                                                                                                                                                                                       "
+                +"Harga dapat berubah sewaktu-waktu\n                                                                                                                                                                                                                                    ",
+
+        "Bayam 500gr                                                                                                                                                                                                                                                                                                          \n                                                                                                                                                                                                                                                 "
+                +"                                                                                                                                                                                                                                                                                                                     \n                                                                                                                                                                                                                                                 "
+                +"Bayam merupakan sayuran hijau yang sangat mudah dijumpai dan disukai oleh semua kalangan dari mulai balita, anak-anak hingga dewasa. Bayam memiliki kandungan nutrisi yang cukup lengkap namun kalorinya rendah. Bayam merupakan sumber serat dan nutrisi lain seperti Vit A, Vit B, zat besi, magnesium, dan kalium.\n                                                                                                                                                                                                                                                 "
+                +"                                                                                                                                                                                                                                                                                                                     \n                                                                                                                                                                                                                                                 "
+                +"> Dikemas sesuai dengan berat produk                                                                                                                                                                                                                                                                                 \n                                                                                                                                                                                                                                                 "
+                +"                                                                                                                                                                                                                                                                                                                     \n                                                                                                                                                                                                                                                 "
+                +"> Produk terjamin kebersihan dan kesegarannya, sehingga setelah diterima disarankan dipotong akarnya lalu simpan di dalam container box penyimpanan untuk selanjutnya disimpan di lemari pendingin hingga maksimal 2-3 hari.                                                                                         \n                                                                                                                                                                                                                                                 ",
+        "Jagung Manis Kulit - 3Pcs                                                                                                                                              \n"
+                +"Gramasi 900gr-1300gr                                                                                                                                                   \n"
+                +"Jagung Manis Kupas merupakan bahan makanan yang kaya akan karbohidrat, jagung juga menjadi salah satu alternatif sumber karbohidrat selain singkong, kentang dan beras.\n"
     )
 
 
@@ -78,23 +98,23 @@ class BuahAdapter  : RecyclerView.Adapter<BuahAdapter.ProductViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return listBuah.size
+        return listProduct.size
     }
 
     override fun onBindViewHolder(holder: BuahAdapter.ProductViewHolder, position: Int) {
-        holder.listBuah.text = listBuah[position]
+        holder.listBuah.text = listProduct[position]
         holder.harga.text = harga[position]
         // holder.desc.text = desc[position]
-        holder.listImageBuah.setImageResource(listImageBuah[position])
+        holder.listImageBuah.setImageResource(listImageProduct[position])
 
         holder.listImageBuah.setOnClickListener{
             val context = holder.listImageBuah.context
             val intent = Intent( context, DetailProdukActivity::class.java)
 
-            intent.putExtra("Produk", listBuah!![position])
+            intent.putExtra("Produk", listProduct!![position])
             intent.putExtra("Detail", desc!![position])
             intent.putExtra("Harga", harga!![position])
-            intent.putExtra("Gambar", listImageBuah!![position])
+            intent.putExtra("Gambar", listImageProduct!![position])
 
             context.startActivity(intent)
         }
