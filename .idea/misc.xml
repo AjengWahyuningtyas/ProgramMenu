@@ -12,7 +12,7 @@
         <entry key="app/src/main/res/drawable/ic_home_foreground.xml" value="0.2185" />
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.1405" />
         <entry key="app/src/main/res/drawable/radius_background.xml" value="0.1385" />
-        <entry key="app/src/main/res/layout/activity_detail_produk.xml" value="0.35733695652173914" />
+        <entry key="app/src/main/res/layout/activity_detail_produk.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_detail_resep.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_landing_page.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35280797101449274" />
